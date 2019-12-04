@@ -74,6 +74,7 @@ namespace TallyUtil
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await ToggleTallyUtilCommand.InitializeAsync(this);
             await TabOverCommand.InitializeAsync(this);
+            await AddClassTemplateCommand.InitializeAsync(this);
         }
 
         #endregion
