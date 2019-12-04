@@ -7,6 +7,8 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 using Microsoft.VisualStudio.TextManager.Interop;
+using EnvDTE80;
+using EnvDTE;
 
 namespace TallyUtil
 {
@@ -123,7 +125,14 @@ namespace TallyUtil
             int result = textManager.GetActiveView2(1, null, (uint)_VIEWFRAMETYPE.vftCodeWindow, out view);
 
             view.GetCaretPos(out int startLine, out int startColumn);
-            view.SetCaretPos(startLine, (startColumn + 8));
+            view.SetCaretPos(startLine, (startColumn + GetTabSize()));
+        }
+
+        private int GetTabSize()
+        {
+            DTE2 dte = this.ServiceProvider.GetService(typeof(DTE)) as DTE2;
+
+            return dte.ActiveDocument.TabSize;
         }
     }
 }
