@@ -120,12 +120,31 @@ namespace TallyUtil
         {
             var service = serviceProvider.GetService(typeof(SVsTextManager));
             var textManager = service as IVsTextManager2;
+            int tabSize = GetTabSize();
+            IVsTextLines textLines;
             IVsTextView view;
 
             int result = textManager.GetActiveView2(1, null, (uint)_VIEWFRAMETYPE.vftCodeWindow, out view);
 
             view.GetCaretPos(out int startLine, out int startColumn);
-            view.SetCaretPos(startLine, (startColumn + GetTabSize()));
+
+            view.GetBuffer(out textLines);
+
+            int maxColumn;
+            textLines.GetLengthOfLine(startLine, out maxColumn);
+
+            if (startColumn == maxColumn) //if cursor is at the last character, move to first character of next line
+            {
+                view.SetCaretPos((startLine + 1), 0);
+            }
+            else if ((startColumn + tabSize) >= maxColumn) //if cursor's new position is at or beyond last character, move to end of line
+            {
+                view.SetCaretPos(startLine, maxColumn);
+            }
+            else
+            {
+                view.SetCaretPos(startLine, (startColumn + tabSize));
+            }
         }
 
         private int GetTabSize()
