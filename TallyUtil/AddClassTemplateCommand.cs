@@ -7,6 +7,8 @@ using Task = System.Threading.Tasks.Task;
 using Microsoft.VisualStudio.TextManager.Interop;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text;
+using Microsoft.VisualStudio.Editor;
+using Microsoft.VisualStudio.ComponentModelHost;
 
 namespace TallyUtil
 {
@@ -107,12 +109,11 @@ namespace TallyUtil
             */
         }
 
-        private Microsoft.VisualStudio.Editor.IVsEditorAdaptersFactoryService GetEditorAdaptersFactoryService()
+        private IVsEditorAdaptersFactoryService GetEditorAdaptersFactoryService()
         {
-            Microsoft.VisualStudio.ComponentModelHost.IComponentModel componentModel =
-                (Microsoft.VisualStudio.ComponentModelHost.IComponentModel)this.ServiceProvider.GetService(
-                    typeof(Microsoft.VisualStudio.ComponentModelHost.SComponentModel));
-            return componentModel.GetService<Microsoft.VisualStudio.Editor.IVsEditorAdaptersFactoryService>();
+            IComponentModel componentModel = (IComponentModel)this.ServiceProvider.GetService(typeof(SComponentModel));
+
+            return componentModel.GetService<IVsEditorAdaptersFactoryService>();
         }
 
         private void GenerateClass(IServiceProvider serviceProvider)

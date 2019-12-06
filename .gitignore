@@ -1,6 +1,3 @@
 .vs
 **/bin/
 **/obj/
-
-# Enable "bin/" folder in since NuGet packages use it for MSBuild targets
-!packages/**/bin/
