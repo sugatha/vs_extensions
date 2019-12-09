@@ -5,10 +5,8 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 using Microsoft.VisualStudio.TextManager.Interop;
-using Microsoft.VisualStudio.Text.Editor;
-using Microsoft.VisualStudio.Text;
-using Microsoft.VisualStudio.Editor;
 using Microsoft.VisualStudio.ComponentModelHost;
+using Microsoft.VisualStudio.Editor;
 
 namespace TallyUtil
 {
@@ -112,11 +110,11 @@ namespace TallyUtil
 
             view.GetCaretPos(out int startLine, out int startColumn);
 
-            IWpfTextView v = GetEditorAdaptersFactoryService().GetWpfTextView(view);
+            Microsoft.VisualStudio.Text.Editor.IWpfTextView v = GetEditorAdaptersFactoryService().GetWpfTextView(view);
 
             string strClass = formClassTemplate();
 
-            ITextEdit edit = v.TextBuffer.CreateEdit();
+            Microsoft.VisualStudio.Text.ITextEdit edit = v.TextBuffer.CreateEdit();
             edit.Insert(v.Caret.Position.BufferPosition, strClass);
             edit.Apply();
         }
