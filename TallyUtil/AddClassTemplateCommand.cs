@@ -92,21 +92,7 @@ namespace TallyUtil
         private void Execute(object sender, EventArgs e)
         {
             GenerateClass(ServiceProvider);
-
-            /*
-            ThreadHelper.ThrowIfNotOnUIThread();
-            string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
-            string title = "AddClassTemplateCommand";
-
-            // Show a message box to prove we were here
-            VsShellUtilities.ShowMessageBox(
-                this.package,
-                message,
-                title,
-                OLEMSGICON.OLEMSGICON_INFO,
-                OLEMSGBUTTON.OLEMSGBUTTON_OK,
-                OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
-            */
+          
         }
 
         private IVsEditorAdaptersFactoryService GetEditorAdaptersFactoryService()
