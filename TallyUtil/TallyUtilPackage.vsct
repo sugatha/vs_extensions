@@ -55,6 +55,18 @@
       <Group guid="guidTallyUtilPackageCmdSet2" id="AddClassEditorContextMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
       </Group>
+      <Group guid="guidTallyUtilPackageCmdSet3" id="AddClassEditorContextMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+      </Group>
+      <Group guid="guidTallyUtilPackageCmdSet4" id="AddClassEditorContextMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+      </Group>
+      <Group guid="guidTallyUtilPackageCmdSet5" id="AddClassEditorContextMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+      </Group>
+      <Group guid="guidTallyUtilPackageCmdSet6" id="AddClassEditorContextMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+      </Group>
     </Groups>
 
     <!--Buttons section. -->
@@ -89,6 +101,34 @@
           <ButtonText>AddClassTemplate</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidTallyUtilPackageCmdSet3" id="cmdidCamelCaseForward" priority="0x0100" type="Button">
+        <Parent guid="guidTallyUtilPackageCmdSet3" id="AddClassEditorContextMenuGroup" />
+        <!--<Icon guid="guidImages1" id="bmpPic1" />-->
+        <Strings>
+          <ButtonText>CamelCaseForward</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidTallyUtilPackageCmdSet4" id="cmdidCamelCaseBackward" priority="0x0100" type="Button">
+        <Parent guid="guidTallyUtilPackageCmdSet4" id="AddClassEditorContextMenuGroup" />
+        <!--<Icon guid="guidImages2" id="bmpPic1" />-->
+        <Strings>
+          <ButtonText>CamelCaseBackward</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidTallyUtilPackageCmdSet5" id="cmdidFuncNext" priority="0x0100" type="Button">
+        <Parent guid="guidTallyUtilPackageCmdSet5" id="AddClassEditorContextMenuGroup" />
+        <!--<Icon guid="guidImages3" id="bmpPic1" />-->
+        <Strings>
+          <ButtonText>FuncNext</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidTallyUtilPackageCmdSet6" id="cmdidFuncPrev" priority="0x0100" type="Button">
+        <Parent guid="guidTallyUtilPackageCmdSet6" id="AddClassEditorContextMenuGroup" />
+        <!--<Icon guid="guidImages4" id="bmpPic1" />-->
+        <Strings>
+          <ButtonText>FuncPrev</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
 
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -101,6 +141,10 @@
       <Bitmap guid="guidImages" href="Resources\ToggleTallyUtilCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <!--<Bitmap guid="guidImages1" href="Resources\TabOverCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" /> -->
       <!--<Bitmap guid="guidImages1" href="Resources\AddClassTemplateCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />-->
+      <!--<Bitmap guid="guidImages1" href="Resources\CamelCaseForward.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />-->
+      <!--<Bitmap guid="guidImages2" href="Resources\CamelCaseBackward.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />-->
+      <Bitmap guid="guidImages3" href="Resources\FuncNext.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      <Bitmap guid="guidImages4" href="Resources\FuncPrev.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
     </Bitmaps>
   </Commands>
 
@@ -151,5 +195,61 @@
       <IDSymbol name="bmpPicArrows" value="5" />
       <IDSymbol name="bmpPicStrikethrough" value="6" />
     </GuidSymbol>-->
+  
+    <GuidSymbol value="{8debab53-c427-435f-8cb1-f3ce046d12b9}" name="guidTallyUtilPackageCmdSet3">
+      <IDSymbol value="4128" name="AddClassEditorContextMenuGroup" />
+      <IDSymbol value="256" name="cmdidCamelCaseForward" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{80ef118b-7983-4316-97e4-c1bf5115ccbc}" name="guidImages1">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{71ddcfaa-0a3d-40e0-878e-d8e4b0da360f}" name="guidTallyUtilPackageCmdSet4">
+      <IDSymbol value="4128" name="AddClassEditorContextMenuGroup" />
+      <IDSymbol value="256" name="cmdidCamelCaseBackward" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{d2698bd4-ee6a-470d-a564-fedb4af07089}" name="guidImages2">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{ba022d4f-0879-4599-88a2-3569eb1bc578}" name="guidTallyUtilPackageCmdSet5">
+      <IDSymbol value="4128" name="AddClassEditorContextMenuGroup" />
+      <IDSymbol value="256" name="cmdidFuncNext" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{d723a862-c55e-421a-a9cf-50bf8d354051}" name="guidImages3">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{8ac24453-aaa9-49ac-af9c-0003e3101278}" name="guidTallyUtilPackageCmdSet6">
+      <IDSymbol value="4128" name="AddClassEditorContextMenuGroup" />
+      <IDSymbol value="256" name="cmdidFuncPrev" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{e7b46167-1acb-4a08-9620-1db1c2c9f190}" name="guidImages4">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
   </Symbols>
 </CommandTable>

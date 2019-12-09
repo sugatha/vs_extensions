@@ -75,6 +75,10 @@ namespace TallyUtil
             await ToggleTallyUtilCommand.InitializeAsync(this);
             await TabOverCommand.InitializeAsync(this);
             await AddClassTemplateCommand.InitializeAsync(this);
+            await CamelCaseForward.InitializeAsync(this);
+            await CamelCaseBackward.InitializeAsync(this);
+            await FuncNext.InitializeAsync(this);
+            await FuncPrev.InitializeAsync(this);
         }
 
         #endregion
