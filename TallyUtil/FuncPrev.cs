@@ -98,18 +98,6 @@ namespace TallyUtil
         private void Execute(object sender, EventArgs e)
         {
             DoFuncPrev(ServiceProvider);
-            /*ThreadHelper.ThrowIfNotOnUIThread();
-            string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
-            string title = "FuncPrev";
-
-            // Show a message box to prove we were here
-            VsShellUtilities.ShowMessageBox(
-                this.package,
-                message,
-                title,
-                OLEMSGICON.OLEMSGICON_INFO,
-                OLEMSGBUTTON.OLEMSGBUTTON_OK,
-                OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);*/
         }
         private void DoFuncPrev(IServiceProvider serviceProvider)
         {
@@ -124,9 +112,9 @@ namespace TallyUtil
             view.GetBuffer(out textLines);
 
             textLines.GetLineCount(out int maxLineCount);
-            
 
-            for (int i = startLine - 1; i > 0; i--)
+            int i = 0;
+            for (i = startLine - 1; i > 0; i--)
             {
                 bool readNextLine = true;
                 textLines.GetLengthOfLine(i, out int maxColumn);
@@ -140,14 +128,13 @@ namespace TallyUtil
                 foreach (Match match in matches)
                 {
                     view.SetCaretPos(i, (match.Index));
-
+                    view.SetTopLine(i-1);
                     readNextLine = false;
                     break;
                 }
                 if (readNextLine == false)
                     break;
             }
-
 
         }
     }

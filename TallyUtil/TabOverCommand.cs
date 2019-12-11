@@ -135,7 +135,12 @@ namespace TallyUtil
 
             if (startColumn == maxColumn) //if cursor is at the last character, move to first character of next line
             {
-                view.SetCaretPos((startLine + 1), 0);
+                textLines.GetLineText(startLine, 0, startLine, maxColumn, out string buffer);
+                string szPad = buffer;
+                addPadding(tabSize, ref szPad);
+                IntPtr pText = System.Runtime.InteropServices.Marshal.StringToCoTaskMemAuto(szPad);
+                textLines.ReplaceLines(startLine, 0, startLine, maxColumn,pText, szPad.Length, new TextSpan[szPad.Length]);
+                view.SetCaretPos(startLine, (szPad.Length));
             }
             else if ((startColumn + tabSize) >= maxColumn) //if cursor's new position is at or beyond last character, move to end of line
             {
@@ -152,6 +157,14 @@ namespace TallyUtil
             DTE2 dte = this.ServiceProvider.GetService(typeof(DTE)) as DTE2;
 
             return dte.ActiveDocument.TabSize;
+        }
+
+        private void addPadding(int tabSize, ref string szPad)
+        {
+            for (int i = 0; i <= tabSize; i++)
+            {
+                szPad += " ";
+            }
         }
     }
 }
