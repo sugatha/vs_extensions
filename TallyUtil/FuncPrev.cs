@@ -129,7 +129,7 @@ namespace TallyUtil
                 {
                     view.SetCaretPos(i, (match.Index));
                     movecursor = false;
-                    //view.SetTopLine(i-1);
+                    view.SetTopLine(i-2);
                     readNextLine = false;
                     break;
                 }
@@ -137,14 +137,14 @@ namespace TallyUtil
                     break;
             }
             /* this is to set focus to 2 lines above the "{" when we reach the top-of-the-page */
-            if(movecursor == true)
+           /* if(movecursor == true)
             {
                 textLines.GetLineText(startLine, 0, startLine, 2, out string szbuffer);
                 if (szbuffer.StartsWith("{"))
                 {
                     view.SetTopLine(startLine - 2);
                 }
-            }
+            }*/
 
         }
     }
