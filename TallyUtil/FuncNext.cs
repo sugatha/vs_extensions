@@ -127,8 +127,8 @@ namespace TallyUtil
             view.GetBuffer(out textLines);
 
             textLines.GetLineCount(out int maxLineCount);
-            
 
+            bool movecursor = true;
             for (int i = startLine + 1; i < maxLineCount; i++)
             {
                 bool readNextLine = true;
@@ -143,15 +143,21 @@ namespace TallyUtil
                 foreach (Match match in matches)
                 {
                     view.SetCaretPos(i, (match.Index));
-
+                    movecursor = false;
                     readNextLine = false;
                     break;
                 }
                 if (readNextLine == false)
                     break;
             }
-           
-
+            /* this is to set focus to the last function */
+            if (movecursor == true)
+            {                
+                TextSpan funcSpan = new TextSpan();
+                funcSpan.iStartLine = startLine;
+                funcSpan.iEndLine = maxLineCount - 1;
+                view.EnsureSpanVisible(funcSpan);             
+            }
         }
     }
 }

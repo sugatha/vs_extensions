@@ -112,7 +112,7 @@ namespace TallyUtil
             view.GetBuffer(out textLines);
 
             textLines.GetLineCount(out int maxLineCount);
-
+            bool movecursor = true;            
             int i = 0;
             for (i = startLine - 1; i > 0; i--)
             {
@@ -128,12 +128,22 @@ namespace TallyUtil
                 foreach (Match match in matches)
                 {
                     view.SetCaretPos(i, (match.Index));
-                    view.SetTopLine(i-1);
+                    movecursor = false;
+                    //view.SetTopLine(i-1);
                     readNextLine = false;
                     break;
                 }
                 if (readNextLine == false)
                     break;
+            }
+            /* this is to set focus to 2 lines above the "{" when we reach the top-of-the-page */
+            if(movecursor == true)
+            {
+                textLines.GetLineText(startLine, 0, startLine, 2, out string szbuffer);
+                if (szbuffer.StartsWith("{"))
+                {
+                    view.SetTopLine(startLine - 2);
+                }
             }
 
         }
