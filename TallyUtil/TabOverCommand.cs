@@ -132,14 +132,23 @@ namespace TallyUtil
 
             int maxColumn;
             textLines.GetLengthOfLine(startLine, out maxColumn);
+            if (maxColumn == 0)
+            {
+                string szPad = "";
+                addPadding(startColumn, ref szPad);
+                addPadding(tabSize, ref szPad);
+                IntPtr pText = System.Runtime.InteropServices.Marshal.StringToCoTaskMemAuto(szPad);
 
-            if (startColumn == maxColumn) //if cursor is at the last character, move to first character of next line
+                textLines.ReplaceLines(startLine, 0, startLine, startColumn+tabSize, pText, szPad.Length, new TextSpan[szPad.Length]);
+                view.SetCaretPos(startLine, (szPad.Length));
+            }
+            else if (startColumn == maxColumn) //if cursor is at the last character,insert a tab
             {
                 textLines.GetLineText(startLine, 0, startLine, maxColumn, out string buffer);
                 string szPad = buffer;
                 addPadding(tabSize, ref szPad);
                 IntPtr pText = System.Runtime.InteropServices.Marshal.StringToCoTaskMemAuto(szPad);
-                textLines.ReplaceLines(startLine, 0, startLine, maxColumn,pText, szPad.Length, new TextSpan[szPad.Length]);
+                textLines.ReplaceLines(startLine, 0, startLine, maxColumn, pText, szPad.Length, new TextSpan[szPad.Length]);
                 view.SetCaretPos(startLine, (szPad.Length));
             }
             else if ((startColumn + tabSize) >= maxColumn) //if cursor's new position is at or beyond last character, move to end of line
@@ -161,7 +170,7 @@ namespace TallyUtil
 
         private void addPadding(int tabSize, ref string szPad)
         {
-            for (int i = 0; i <= tabSize; i++)
+            for (int i = 0; i < tabSize; i++)
             {
                 szPad += " ";
             }
