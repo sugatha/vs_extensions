@@ -74,6 +74,7 @@
     <Compile Include="TallyUtilPackage.cs" />
     <Compile Include="AddClassTemplateCommand.cs" />
     <Compile Include="ToggleTallyUtilCommand.cs" />
+    <Compile Include="TraceFunc.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -97,6 +98,7 @@
     <Content Include="Resources\TallyUtilPackage.ico" />
     <Content Include="Resources\AddClassTemplateCommand.png" />
     <Content Include="Resources\ToggleTallyUtilCommand.png" />
+    <Content Include="Resources\TraceFunc.png" />
     <Content Include="stylesheet.css" />
     <VSCTCompile Include="TallyUtilPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>

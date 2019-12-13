@@ -99,21 +99,6 @@ namespace TallyUtil
         private void Execute(object sender, EventArgs e)
         {
             MoveCursor(ServiceProvider);
-
-            /*
-             * ThreadHelper.ThrowIfNotOnUIThread();
-            string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
-            string title = "TabOverCommand";
-
-            // Show a message box to prove we were here
-            VsShellUtilities.ShowMessageBox(
-                this.package,
-                message,
-                title,
-                OLEMSGICON.OLEMSGICON_INFO,
-                OLEMSGBUTTON.OLEMSGBUTTON_OK,
-                OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
-            */
         }
 
         private void MoveCursor(IServiceProvider serviceProvider)
@@ -146,7 +131,11 @@ namespace TallyUtil
             {
                 textLines.GetLineText(startLine, 0, startLine, maxColumn, out string buffer);
                 string szPad = buffer;
-                addPadding(tabSize, ref szPad);
+
+                //addPadding(tabSize, ref szPad);
+                int tabSpace = CursorPos(startColumn, tabSize);
+                addPadding((tabSpace- startColumn), ref szPad);
+
                 IntPtr pText = System.Runtime.InteropServices.Marshal.StringToCoTaskMemAuto(szPad);
                 textLines.ReplaceLines(startLine, 0, startLine, maxColumn, pText, szPad.Length, new TextSpan[szPad.Length]);
                 view.SetCaretPos(startLine, (szPad.Length));
@@ -157,8 +146,22 @@ namespace TallyUtil
             }
             else
             {
-                view.SetCaretPos(startLine, (startColumn + tabSize));
+                view.SetCaretPos(startLine, CursorPos(startColumn, tabSize));
             }
+        }
+
+        int CursorPos(int pos, int tabSize)
+        {
+            if (pos == 0)
+                return tabSize;
+
+            for (int i = pos+1; i <= pos+ tabSize; i++)
+            {
+                if (i % tabSize == 0)
+                    return i;
+            }
+
+            return 0;
         }
 
         private int GetTabSize()

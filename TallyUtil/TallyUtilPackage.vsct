@@ -67,6 +67,9 @@
       <Group guid="guidTallyUtilPackageCmdSet6" id="AddClassEditorContextMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
       </Group>
+      <Group guid="guidTallyUtilPackageCmdSet7" id="AddClassEditorContextMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+      </Group>
     </Groups>
 
     <!--Buttons section. -->
@@ -129,6 +132,13 @@
           <ButtonText>FuncPrev</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidTallyUtilPackageCmdSet7" id="cmdidTraceFunc" priority="0x0100" type="Button">
+        <Parent guid="guidTallyUtilPackageCmdSet7" id="AddClassEditorContextMenuGroup" />
+        <!--<Icon guid="guidImages5" id="bmpPic1" />-->
+        <Strings>
+          <ButtonText>TraceFunc</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
 
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -145,6 +155,7 @@
       <!--<Bitmap guid="guidImages2" href="Resources\CamelCaseBackward.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />-->
       <Bitmap guid="guidImages3" href="Resources\FuncNext.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidImages4" href="Resources\FuncPrev.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      <Bitmap guid="guidImages5" href="Resources\TraceFunc.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
     </Bitmaps>
   </Commands>
 
@@ -244,6 +255,20 @@
     </GuidSymbol>
   
     <GuidSymbol value="{e7b46167-1acb-4a08-9620-1db1c2c9f190}" name="guidImages4">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{72b42dd0-baf5-4139-843a-602e2afa39df}" name="guidTallyUtilPackageCmdSet7">
+      <IDSymbol value="4128" name="AddClassEditorContextMenuGroup" />
+      <IDSymbol value="256" name="cmdidTraceFunc" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{8f628030-a7c9-4edc-bed5-3f92bceba3d7}" name="guidImages5">
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />

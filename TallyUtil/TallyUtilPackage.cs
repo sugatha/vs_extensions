@@ -79,6 +79,7 @@ namespace TallyUtil
             await CamelCaseBackward.InitializeAsync(this);
             await FuncNext.InitializeAsync(this);
             await FuncPrev.InitializeAsync(this);
+            await TraceFunc.InitializeAsync(this);
         }
 
         #endregion

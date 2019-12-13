@@ -114,50 +114,50 @@ namespace TallyUtil
                 OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);*/
         }
 
-        private void DoFuncNext(IServiceProvider serviceProvider)
-        {
-            var service = serviceProvider.GetService(typeof(SVsTextManager));
-            var textManager = service as IVsTextManager2;
-            IVsTextView view;
-
-            int result = textManager.GetActiveView2(1, null, (uint)_VIEWFRAMETYPE.vftCodeWindow, out view);
-
-            IVsTextLines textLines;
-            view.GetCaretPos(out int startLine, out int startColumn);
-            view.GetBuffer(out textLines);
-
-            textLines.GetLineCount(out int maxLineCount);
-
-            bool movecursor = true;
-            for (int i = startLine + 1; i < maxLineCount; i++)
+            private void DoFuncNext(IServiceProvider serviceProvider)
             {
-                bool readNextLine = true;
-                textLines.GetLengthOfLine(i, out int maxColumn);
+                var service = serviceProvider.GetService(typeof(SVsTextManager));
+                var textManager = service as IVsTextManager2;
+                IVsTextView view;
 
-                textLines.GetLineText(i, 0, i, maxColumn, out string buffer);
+                int result = textManager.GetActiveView2(1, null, (uint)_VIEWFRAMETYPE.vftCodeWindow, out view);
 
-                var camelCaseExpr = new Regex("^{");
+                IVsTextLines textLines;
+                view.GetCaretPos(out int startLine, out int startColumn);
+                view.GetBuffer(out textLines);
 
-                MatchCollection matches = camelCaseExpr.Matches(buffer);
+                textLines.GetLineCount(out int maxLineCount);
 
-                foreach (Match match in matches)
+                bool movecursor = true;
+                for (int i = startLine + 1; i < maxLineCount; i++)
                 {
-                    view.SetCaretPos(i, (match.Index));
-                    movecursor = false;
-                    readNextLine = false;
-                    break;
+                    bool readNextLine = true;
+                    textLines.GetLengthOfLine(i, out int maxColumn);
+
+                    textLines.GetLineText(i, 0, i, maxColumn, out string buffer);
+
+                    var camelCaseExpr = new Regex("^{");
+
+                    MatchCollection matches = camelCaseExpr.Matches(buffer);
+
+                    foreach (Match match in matches)
+                    {
+                        view.SetCaretPos(i, (match.Index));
+                        movecursor = false;
+                        readNextLine = false;
+                        break;
+                    }
+                    if (readNextLine == false)
+                        break;
                 }
-                if (readNextLine == false)
-                    break;
+                /* this is to set focus to the last function */
+                if (movecursor == true)
+                {
+                    TextSpan funcSpan = new TextSpan();
+                    funcSpan.iStartLine = startLine;
+                    funcSpan.iEndLine = maxLineCount - 1;
+                    view.EnsureSpanVisible(funcSpan);
+                }
             }
-            /* this is to set focus to the last function */
-            if (movecursor == true)
-            {                
-                TextSpan funcSpan = new TextSpan();
-                funcSpan.iStartLine = startLine;
-                funcSpan.iEndLine = maxLineCount - 1;
-                view.EnsureSpanVisible(funcSpan);             
-            }
-        }
     }
 }
