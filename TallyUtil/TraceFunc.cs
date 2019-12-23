@@ -238,7 +238,7 @@ namespace TallyUtil
         void InsertTraceFunc(int posToAddTraceFunc, Microsoft.VisualStudio.Text.ITextEdit edit, IVsTextView textView)
         {
             string stub = "TRACEFUNC;";
-            addPrePaddingAndLineBreak(GetIndentSize(), ref stub);
+            addPrePaddingAndLineBreak(2*GetIndentSize(), ref stub);
             textView.GetBuffer(out IVsTextLines textLines);
             textLines.GetPositionOfLineIndex(posToAddTraceFunc+1, 0, out int newPosition);
             edit.Insert(newPosition, stub);
