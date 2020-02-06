@@ -70,6 +70,9 @@
       <Group guid="guidTallyUtilPackageCmdSet7" id="AddClassEditorContextMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
       </Group>
+      <Group guid="guidTallyUtilPackageCmdSet8" id="ProjectMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE" />
+      </Group>
     </Groups>
 
     <!--Buttons section. -->
@@ -139,6 +142,13 @@
           <ButtonText>TraceFunc</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidTallyUtilPackageCmdSet8" id="cmdidConfigRemoteSys" priority="0x0100" type="Button">
+        <Parent guid="guidTallyUtilPackageCmdSet8" id="ProjectMenuGroup" />
+        <!--<Icon guid="guidImages6" id="bmpPic1" />-->
+        <Strings>
+          <ButtonText>ConfigRemoteSys</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
 
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -156,6 +166,7 @@
       <Bitmap guid="guidImages3" href="Resources\FuncNext.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidImages4" href="Resources\FuncPrev.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidImages5" href="Resources\TraceFunc.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      <Bitmap guid="guidImages6" href="Resources\ConfigRemoteSys.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
     </Bitmaps>
   </Commands>
 
@@ -269,6 +280,20 @@
     </GuidSymbol>
   
     <GuidSymbol value="{8f628030-a7c9-4edc-bed5-3f92bceba3d7}" name="guidImages5">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{7d59e09d-41b1-4deb-a8ab-b565dcae2db9}" name="guidTallyUtilPackageCmdSet8">
+      <IDSymbol value="4127" name="ProjectMenuGroup" />
+      <IDSymbol value="256" name="cmdidConfigRemoteSys" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{eaade9b2-a8b6-440c-af0e-01a32c4b42b1}" name="guidImages6">
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />

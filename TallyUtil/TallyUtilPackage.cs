@@ -80,6 +80,7 @@ namespace TallyUtil
             await FuncNext.InitializeAsync(this);
             await FuncPrev.InitializeAsync(this);
             await TraceFunc.InitializeAsync(this);
+            await ConfigRemoteSys.InitializeAsync(this);
         }
 
         #endregion
