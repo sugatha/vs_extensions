@@ -1,8 +1,12 @@
 ﻿using System;
 using System.ComponentModel.Design;
 using System.Globalization;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
+using EnvDTE;
+using EnvDTE80;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
@@ -111,10 +115,19 @@ namespace TallyUtil
         }
         private void CreateNewProject()
         {
-            NewProject obj = new NewProject();
+            NewProject obj = new NewProject(GetCurrentProjectFileName());
 
             obj.ShowDialog();
 
         }
+        private string GetCurrentProjectFileName()
+        {
+
+            DTE dte = (DTE)ServiceProvider.GetService(typeof(DTE));
+            string solutionDir = System.IO.Path.GetDirectoryName(dte.Solution.FullName);
+            return solutionDir;
+
+        }
+        
     }
 }

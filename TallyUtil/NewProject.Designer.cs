@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.References = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -85,13 +85,14 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Reference";
             // 
-            // comboBox2
+            // References
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(39, 154);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(255, 21);
-            this.comboBox2.TabIndex = 6;
+            this.References.FormattingEnabled = true;
+            this.References.Location = new System.Drawing.Point(39, 154);
+            this.References.Name = "References";
+            this.References.Size = new System.Drawing.Size(255, 21);
+            this.References.TabIndex = 6;
+            this.References.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -108,7 +109,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 261);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.References);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
@@ -129,7 +130,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox References;
         private System.Windows.Forms.Button button1;
     }
 }
