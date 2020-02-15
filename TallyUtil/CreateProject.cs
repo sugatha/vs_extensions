@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml;
 using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio;
@@ -18,6 +19,11 @@ namespace TallyUtil
     /// </summary>
     internal sealed class CreateProject
     {
+        public string szCurrPath;
+        public string szSharedItemName;
+        public string szNewProjectName;
+        public string szProjectType;
+
         /// <summary>
         /// Command ID.
         /// </summary>
@@ -119,6 +125,12 @@ namespace TallyUtil
 
             obj.ShowDialog();
 
+            szCurrPath = obj.currPath;
+            szSharedItemName = obj.sharedItemName;
+            szNewProjectName = obj.newProjectname;
+            szProjectType = obj.projectType;
+
+            CreateProjectFile();
             // we have the variables of the dialog
 
         }
@@ -130,6 +142,150 @@ namespace TallyUtil
             return solutionDir;
 
         }
-        
+
+        private void CreateProjectFile()
+        {
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.IndentChars = "\t";
+            settings.OmitXmlDeclaration = true;
+            settings.NewLineOnAttributes = true;
+
+            using (XmlWriter writer = XmlWriter.Create(szCurrPath + "\\" + szNewProjectName + ".vcxproj", settings))
+            {
+                // {
+                writer.WriteStartElement("Project", "http://schemas.microsoft.com/developer/msbuild/2003");
+                writer.WriteAttributeString("DefaultTargets", "Build");
+                writer.WriteStartElement("ItemGroup");
+                writer.WriteAttributeString("Label", "ProjectConfigurations");
+                writer.WriteStartElement("ProjectConfiguration");
+                writer.WriteAttributeString("Include", "Debug|x64");
+                writer.WriteElementString("Configuration", "Debug");
+                writer.WriteEndElement();
+                writer.WriteEndElement();
+                // }
+                // {
+                writer.WriteStartElement("PropertyGroup");
+                writer.WriteAttributeString("Label", "Globals");
+                writer.WriteElementString("VCProjectVersion", "16.0");
+                writer.WriteElementString("ProjectGuid", "{F1498C1E-C4C5-4FFB-AAFF-137C4C53BAB7}");
+                writer.WriteElementString("Keyword", "Win32Proj");
+                writer.WriteElementString("RootNamespace", "TWCoreLibWin");
+                writer.WriteElementString("WindowsTargetPlatformVersion", "10.0");
+                writer.WriteEndElement();
+                // }
+                // {
+                writer.WriteStartElement("Import");
+                writer.WriteAttributeString("Project", "$(VCTargetsPath)\\Microsoft.Cpp.Default.props");
+                writer.WriteEndElement();
+                // }
+                // {
+                writer.WriteStartElement("PropertyGroup");
+                writer.WriteAttributeString("Condition", "'$(Configuration)|$(Platform)'=='Debug|x64'");
+                writer.WriteAttributeString("Label", "Configuration");
+                writer.WriteElementString("ConfigurationType", "StaticLibrary");
+                writer.WriteElementString("UseDebugLibraries", "true");
+                writer.WriteElementString("PlatformToolset", "v142");
+                writer.WriteElementString("CharacterSet", "Unicode");
+                writer.WriteEndElement();
+                // }
+                // {
+                writer.WriteStartElement("Import");
+                writer.WriteAttributeString("Project", "$(VCTargetsPath)\\Microsoft.Cpp.props");
+                writer.WriteEndElement();
+                // }
+                // {
+                writer.WriteStartElement("ImportGroup");
+                writer.WriteAttributeString("Label", "ExtensionSettings");
+                writer.WriteEndElement();
+                // }
+                // {
+                writer.WriteStartElement("ImportGroup");
+                writer.WriteAttributeString("Label", "Shared");
+                writer.WriteStartElement("Import");
+                if(szSharedItemName.Length != 0)
+                writer.WriteAttributeString("Project", szSharedItemName);
+                writer.WriteAttributeString("Label", "Shared");
+                writer.WriteEndElement();
+                writer.WriteEndElement();
+                // }
+
+                // {
+                writer.WriteStartElement("ImportGroup");
+                writer.WriteAttributeString("Label", "PropertySheets");
+                writer.WriteAttributeString("Condition", "'$(Configuration)|$(Platform)'=='Debug|x64'");
+
+                writer.WriteStartElement("Import");
+                writer.WriteAttributeString("Project", "$(UserRootDir)\\Microsoft.Cpp.$(Platform).user.props");
+                writer.WriteAttributeString("Condition", "exists('$(UserRootDir)\\Microsoft.Cpp.$(Platform).user.props')");
+                writer.WriteAttributeString("Label", "LocalAppDataPlatform");
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("Import");
+                writer.WriteAttributeString("Project", "LibraryOutput.props");
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("Import");
+                writer.WriteAttributeString("Project", "AdditionalIncludes.props");
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("Import");
+                writer.WriteAttributeString("Project", "WinDebug.props");
+                writer.WriteEndElement();
+
+                writer.WriteEndElement();
+                // }
+                // {
+                writer.WriteStartElement("PropertyGroup");
+                writer.WriteAttributeString("Label", "UserMacros");
+                writer.WriteEndElement();
+                // }
+                // {
+                writer.WriteStartElement("PropertyGroup");
+                writer.WriteAttributeString("Condition", "'$(Configuration)|$(Platform)'=='Debug|x64'");
+                writer.WriteElementString("LinkIncremental", "true");
+                writer.WriteElementString("RunCodeAnalysis", "false");
+                writer.WriteElementString("CodeAnalysisRuleSet", "AllRules.ruleset");
+                writer.WriteEndElement();
+                // }
+                // {
+                writer.WriteStartElement("ItemDefinitionGroup");
+                writer.WriteAttributeString("Condition", "'$(Configuration)|$(Platform)'=='Debug|x64'");
+
+                writer.WriteStartElement("ClCompile");
+                writer.WriteElementString("PrecompiledHeader", "NotUsing");
+                writer.WriteElementString("Optimization", "Disabled");
+                writer.WriteElementString("SDLCheck", "true");
+                writer.WriteElementString("ConformanceMode", "true");
+                writer.WriteElementString("PrecompiledHeaderFile", "pch.h");
+                writer.WriteElementString("AdditionalOptions", "/DTRACE /DTWMETRICS_ENABLE %(AdditionalOptions)");
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("Link");
+                writer.WriteElementString("SubSystem", "Windows");
+                writer.WriteElementString("GenerateDebugInformation", "true");
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("BuildLog");
+                writer.WriteEndElement();
+
+                writer.WriteEndElement();
+                // }
+                // {
+                writer.WriteStartElement("Import");
+                writer.WriteAttributeString("Project", "$(VCTargetsPath)\\Microsoft.Cpp.targets");
+                writer.WriteEndElement();
+                // }
+                // {
+                writer.WriteStartElement("ImportGroup");
+                writer.WriteAttributeString("Label", "ExtensionTargets");
+                writer.WriteEndElement();
+                // }
+
+                writer.WriteEndElement(); // project
+                writer.Flush();
+            }
+        }
+
     }
 }

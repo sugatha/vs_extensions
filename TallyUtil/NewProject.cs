@@ -19,7 +19,7 @@ namespace TallyUtil
 {
     public partial class NewProject : Form
     {
-        private string currPath;
+        public string currPath;
         public string sharedItemName;
         public string newProjectname;
         public string projectType;
@@ -69,7 +69,7 @@ namespace TallyUtil
 
             newProjectname = Project_Name.Text;
 
-            if((indexReference != -1) && (indexType != -1) && newProjectname.Length != 0)
+            if((indexType != -1) && newProjectname.Length != 0)
                 this.Close();
         }
 
