@@ -119,6 +119,8 @@ namespace TallyUtil
 
             obj.ShowDialog();
 
+            // we have the variables of the dialog
+
         }
         private string GetCurrentProjectFileName()
         {

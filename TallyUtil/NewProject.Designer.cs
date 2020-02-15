@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Project_Name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Project_Type = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.References = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,12 +46,12 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Project Name";
             // 
-            // textBox1
+            // Project_Name
             // 
-            this.textBox1.Location = new System.Drawing.Point(39, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 20);
-            this.textBox1.TabIndex = 2;
+            this.Project_Name.Location = new System.Drawing.Point(39, 48);
+            this.Project_Name.Name = "Project_Name";
+            this.Project_Name.Size = new System.Drawing.Size(255, 20);
+            this.Project_Name.TabIndex = 2;
             // 
             // label2
             // 
@@ -63,18 +63,19 @@
             this.label2.Text = "Type";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // comboBox1
+            // Project_Type
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.Project_Type.FormattingEnabled = true;
+            this.Project_Type.Items.AddRange(new object[] {
             "Shared Items",
             "Executable",
             "Static Library",
             "Shared Library"});
-            this.comboBox1.Location = new System.Drawing.Point(39, 98);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(255, 21);
-            this.comboBox1.TabIndex = 4;
+            this.Project_Type.Location = new System.Drawing.Point(39, 98);
+            this.Project_Type.Name = "Project_Type";
+            this.Project_Type.Size = new System.Drawing.Size(255, 21);
+            this.Project_Type.TabIndex = 4;
+            this.Project_Type.SelectedIndexChanged += new System.EventHandler(this.Project_Type_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -92,7 +93,6 @@
             this.References.Name = "References";
             this.References.Size = new System.Drawing.Size(255, 21);
             this.References.TabIndex = 6;
-            this.References.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -102,6 +102,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Create Project";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // NewProject
             // 
@@ -111,9 +112,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.References);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Project_Type);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Project_Name);
             this.Controls.Add(this.label1);
             this.Name = "NewProject";
             this.Text = "NewProject";
@@ -126,9 +127,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Project_Name;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Project_Type;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox References;
         private System.Windows.Forms.Button button1;
