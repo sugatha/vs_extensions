@@ -168,7 +168,7 @@ namespace TallyUtil
                 writer.WriteStartElement("PropertyGroup");
                 writer.WriteAttributeString("Label", "Globals");
                 writer.WriteElementString("VCProjectVersion", "16.0");
-                writer.WriteElementString("ProjectGuid", "{F1498C1E-C4C5-4FFB-AAFF-137C4C53BAB7}");
+                writer.WriteElementString("ProjectGuid", Guid.NewGuid().ToString());
                 writer.WriteElementString("Keyword", "Win32Proj");
                 writer.WriteElementString("RootNamespace", "TWCoreLibWin");
                 writer.WriteElementString("WindowsTargetPlatformVersion", "10.0");
