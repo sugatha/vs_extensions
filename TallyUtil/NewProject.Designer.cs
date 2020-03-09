@@ -93,6 +93,7 @@
             this.References.Name = "References";
             this.References.Size = new System.Drawing.Size(255, 21);
             this.References.TabIndex = 6;
+            this.References.SelectedIndexChanged += new System.EventHandler(this.References_SelectedIndexChanged);
             // 
             // button1
             // 

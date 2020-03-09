@@ -80,5 +80,10 @@ namespace TallyUtil
                 References.Enabled = true;
             }
         }
+
+        private void References_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
