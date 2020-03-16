@@ -331,7 +331,7 @@ namespace TallyUtil
             settings.OmitXmlDeclaration = true;
             settings.NewLineOnAttributes = true;
 
-            using (XmlWriter writer = XmlWriter.Create(szCurrPath + "\\" + szNewProjectName + ".vcxproj", settings))
+            using (XmlWriter writer = XmlWriter.Create(szCurrPath + "\\" + szNewProjectName + "Win" + ".vcxproj", settings))
             {
                 writer.WriteStartElement("Project", "http://schemas.microsoft.com/developer/msbuild/2003");
                 writer.WriteAttributeString("DefaultTargets", "Build");
