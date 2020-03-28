@@ -173,14 +173,14 @@ namespace TallyUtil
                 WriteProjectConfiguration(writer, "Debug", "x64");
                 WriteProjectConfiguration(writer, "Release", "x64");
                 WriteProjectConfiguration(writer, "Diagnostics", "x64");
-                WriteProjectConfiguration(writer, "SimulationOnly", "x64");
+                WriteProjectConfiguration(writer, "Simulation", "x64");
                 WriteProjectConfiguration(writer, "TraceOnly", "x64");
                 WriteProjectConfiguration(writer, "MetricsOnly", "x64");
 
                 WriteProjectConfiguration(writer, "Debug", "ARM64");
                 WriteProjectConfiguration(writer, "Release", "ARM64");
                 WriteProjectConfiguration(writer, "Diagnostics", "ARM64");
-                WriteProjectConfiguration(writer, "SimulationOnly", "ARM64");
+                WriteProjectConfiguration(writer, "Simulation", "ARM64");
                 WriteProjectConfiguration(writer, "TraceOnly", "ARM64");
                 WriteProjectConfiguration(writer, "MetricsOnly", "ARM64");
 
@@ -207,14 +207,14 @@ namespace TallyUtil
                 WritePropertyGroup(writer, "Debug", "x64", "Application", "v142","Unicode","true");
                 WritePropertyGroup(writer, "Release", "x64", "Application", "v142", "Unicode", "false");
                 WritePropertyGroup(writer, "Diagnostics", "x64", "Application", "v142", "Unicode", "false");
-                WritePropertyGroup(writer, "SimulationOnly", "x64", "Application", "v142", "Unicode", "false");
+                WritePropertyGroup(writer, "Simulation", "x64", "Application", "v142", "Unicode", "false");
                 WritePropertyGroup(writer, "TraceOnly", "x64", "Application", "v142", "Unicode", "false");
                 WritePropertyGroup(writer, "MetricsOnly", "x64", "Application", "v142", "Unicode", "false");
 
                 WritePropertyGroup(writer, "Debug", "ARM64", "Application", "v142", "Unicode", "true");
                 WritePropertyGroup(writer, "Release", "ARM64", "Application", "v142", "Unicode", "false");
                 WritePropertyGroup(writer, "Diagnostics", "ARM64", "Application", "v142", "Unicode", "false");
-                WritePropertyGroup(writer, "SimulationOnly", "ARM64", "Application", "v142", "Unicode", "false");
+                WritePropertyGroup(writer, "Simulation", "ARM64", "Application", "v142", "Unicode", "false");
                 WritePropertyGroup(writer, "TraceOnly", "ARM64", "Application", "v142", "Unicode", "false");
                 WritePropertyGroup(writer, "MetricsOnly", "ARM64", "Application", "v142", "Unicode", "false");
 
@@ -258,14 +258,14 @@ namespace TallyUtil
                 WriteImportGroup(writer, "Debug", "x64", output_property, "AdditionalIncludes.props", "WinDebug.props");
                 WriteImportGroup(writer, "Release", "x64", output_property, "AdditionalIncludes.props", "WinRelease.props");
                 WriteImportGroup(writer, "Diagnostics", "x64", output_property, "AdditionalIncludes.props", "WinRelease.props", "Diagnostics.props");
-                WriteImportGroup(writer, "SimulationOnly", "x64", output_property, "AdditionalIncludes.props", "WinRelease.props", "Simulation.props");
+                WriteImportGroup(writer, "Simulation", "x64", output_property, "AdditionalIncludes.props", "WinRelease.props", "Simulation.props");
                 WriteImportGroup(writer, "TraceOnly", "x64", output_property, "AdditionalIncludes.props", "WinRelease.props", "TraceOnly.props");
                 WriteImportGroup(writer, "MetricsOnly", "x64", output_property, "AdditionalIncludes.props", "WinRelease.props", "MetricsOnly.props");
 
                 WriteImportGroup(writer, "Debug", "ARM64", output_property, "AdditionalIncludes.props", "WinDebug.props");
                 WriteImportGroup(writer, "Release", "ARM64", output_property, "AdditionalIncludes.props", "WinRelease.props");
                 WriteImportGroup(writer, "Diagnostics", "ARM64", output_property, "AdditionalIncludes.props", "WinRelease.props", "Diagnostics.props");
-                WriteImportGroup(writer, "SimulationOnly", "ARM64", output_property, "AdditionalIncludes.props", "WinRelease.props", "Simulation.props");
+                WriteImportGroup(writer, "Simulation", "ARM64", output_property, "AdditionalIncludes.props", "WinRelease.props", "Simulation.props");
                 WriteImportGroup(writer, "TraceOnly", "ARM64", output_property, "AdditionalIncludes.props", "WinRelease.props", "TraceOnly.props");
                 WriteImportGroup(writer, "MetricsOnly", "ARM64", output_property, "AdditionalIncludes.props", "WinRelease.props", "MetricsOnly.props");
 
@@ -279,14 +279,14 @@ namespace TallyUtil
                 WritePropertyGroupUserMacros(writer, "Debug", "x64","","");
                 WritePropertyGroupUserMacros(writer, "Release", "x64","","");
                 WritePropertyGroupUserMacros(writer, "Diagnostics", "x64","","");
-                WritePropertyGroupUserMacros(writer, "SimulationOnly", "x64","","");
+                WritePropertyGroupUserMacros(writer, "Simulation", "x64","","");
                 WritePropertyGroupUserMacros(writer, "TraceOnly", "x64","","");
                 WritePropertyGroupUserMacros(writer, "MetricsOnly", "x64","","");
 
                 WritePropertyGroupUserMacros(writer, "Debug", "ARM64","","");
                 WritePropertyGroupUserMacros(writer, "Release", "ARM64","","");
                 WritePropertyGroupUserMacros(writer, "Diagnostics", "ARM64","","");
-                WritePropertyGroupUserMacros(writer, "SimulationOnly", "ARM64","","");
+                WritePropertyGroupUserMacros(writer, "Simulation", "ARM64","","");
                 WritePropertyGroupUserMacros(writer, "TraceOnly", "ARM64","","");
                 WritePropertyGroupUserMacros(writer, "MetricsOnly", "ARM64","","");
 
@@ -296,14 +296,14 @@ namespace TallyUtil
                 WriteItemDefinitionGroup(writer, "Debug", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\",true);
                 WriteItemDefinitionGroup(writer, "Release", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "Diagnostics", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
-                WriteItemDefinitionGroup(writer, "SimulationOnly", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
+                WriteItemDefinitionGroup(writer, "Simulation", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "TraceOnly", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "MetricsOnly", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
 
                 WriteItemDefinitionGroup(writer, "Debug", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "Release", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "Diagnostics", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
-                WriteItemDefinitionGroup(writer, "SimulationOnly", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
+                WriteItemDefinitionGroup(writer, "Simulation", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "TraceOnly", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "MetricsOnly", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
 
@@ -343,14 +343,14 @@ namespace TallyUtil
                 WriteProjectConfiguration(writer, "Debug", "x64");
                 WriteProjectConfiguration(writer, "Release", "x64");
                 WriteProjectConfiguration(writer, "Diagnostics", "x64");
-                WriteProjectConfiguration(writer, "SimulationOnly", "x64");
+                WriteProjectConfiguration(writer, "Simulation", "x64");
                 WriteProjectConfiguration(writer, "TraceOnly", "x64");
                 WriteProjectConfiguration(writer, "MetricsOnly", "x64");
 
                 WriteProjectConfiguration(writer, "Debug", "ARM64");
                 WriteProjectConfiguration(writer, "Release", "ARM64");
                 WriteProjectConfiguration(writer, "Diagnostics", "ARM64");
-                WriteProjectConfiguration(writer, "SimulationOnly", "ARM64");
+                WriteProjectConfiguration(writer, "Simulation", "ARM64");
                 WriteProjectConfiguration(writer, "TraceOnly", "ARM64");
                 WriteProjectConfiguration(writer, "MetricsOnly", "ARM64");
 
@@ -376,14 +376,14 @@ namespace TallyUtil
                 WritePropertyGroup(writer, "Debug", "x64", "StaticLibrary", "v142", "Unicode", "true");
                 WritePropertyGroup(writer, "Release", "x64", "StaticLibrary", "v142", "Unicode", "false");
                 WritePropertyGroup(writer, "Diagnostics", "x64", "StaticLibrary", "v142", "Unicode", "false");
-                WritePropertyGroup(writer, "SimulationOnly", "x64", "StaticLibrary", "v142", "Unicode", "false");
+                WritePropertyGroup(writer, "Simulation", "x64", "StaticLibrary", "v142", "Unicode", "false");
                 WritePropertyGroup(writer, "TraceOnly", "x64", "StaticLibrary", "v142", "Unicode", "false");
                 WritePropertyGroup(writer, "MetricsOnly", "x64", "StaticLibrary", "v142", "Unicode", "false");
 
                 WritePropertyGroup(writer, "Debug", "ARM64", "StaticLibrary", "v142", "Unicode", "true");
                 WritePropertyGroup(writer, "Release", "ARM64", "StaticLibrary", "v142", "Unicode", "false");
                 WritePropertyGroup(writer, "Diagnostics", "ARM64", "StaticLibrary", "v142", "Unicode", "false");
-                WritePropertyGroup(writer, "SimulationOnly", "ARM64", "StaticLibrary", "v142", "Unicode", "false");
+                WritePropertyGroup(writer, "Simulation", "ARM64", "StaticLibrary", "v142", "Unicode", "false");
                 WritePropertyGroup(writer, "TraceOnly", "ARM64", "StaticLibrary", "v142", "Unicode", "false");
                 WritePropertyGroup(writer, "MetricsOnly", "ARM64", "StaticLibrary", "v142", "Unicode", "false");
 
@@ -427,14 +427,14 @@ namespace TallyUtil
                 WriteImportGroup(writer, "Debug", "x64", output_property, "AdditionalIncludes.props", "WinDebug.props");
                 WriteImportGroup(writer, "Release", "x64", output_property, "AdditionalIncludes.props", "WinRelease.props");
                 WriteImportGroup(writer, "Diagnostics", "x64", output_property, "AdditionalIncludes.props", "WinRelease.props", "Diagnostics.props");
-                WriteImportGroup(writer, "SimulationOnly", "x64", output_property, "AdditionalIncludes.props", "WinRelease.props", "Simulation.props");
+                WriteImportGroup(writer, "Simulation", "x64", output_property, "AdditionalIncludes.props", "WinRelease.props", "Simulation.props");
                 WriteImportGroup(writer, "TraceOnly", "x64", output_property, "AdditionalIncludes.props", "WinRelease.props", "TraceOnly.props");
                 WriteImportGroup(writer, "MetricsOnly", "x64", output_property, "AdditionalIncludes.props", "WinRelease.props", "MetricsOnly.props");
 
                 WriteImportGroup(writer, "Debug", "ARM64", output_property, "AdditionalIncludes.props", "WinDebug.props");
                 WriteImportGroup(writer, "Release", "ARM64", output_property, "AdditionalIncludes.props", "WinRelease.props");
                 WriteImportGroup(writer, "Diagnostics", "ARM64", output_property, "AdditionalIncludes.props", "WinRelease.props", "Diagnostics.props");
-                WriteImportGroup(writer, "SimulationOnly", "ARM64", output_property, "AdditionalIncludes.props", "WinRelease.props", "Simulation.props");
+                WriteImportGroup(writer, "Simulation", "ARM64", output_property, "AdditionalIncludes.props", "WinRelease.props", "Simulation.props");
                 WriteImportGroup(writer, "TraceOnly", "ARM64", output_property, "AdditionalIncludes.props", "WinRelease.props", "TraceOnly.props");
                 WriteImportGroup(writer, "MetricsOnly", "ARM64", output_property, "AdditionalIncludes.props", "WinRelease.props", "MetricsOnly.props");
 
@@ -448,14 +448,14 @@ namespace TallyUtil
                 WritePropertyGroupUserMacros(writer, "Debug", "x64","","");
                 WritePropertyGroupUserMacros(writer, "Release", "x64", "", "");
                 WritePropertyGroupUserMacros(writer, "Diagnostics", "x64", "", "");
-                WritePropertyGroupUserMacros(writer, "SimulationOnly", "x64", "", "");
+                WritePropertyGroupUserMacros(writer, "Simulation", "x64", "", "");
                 WritePropertyGroupUserMacros(writer, "TraceOnly", "x64", "", "");
                 WritePropertyGroupUserMacros(writer, "MetricsOnly", "x64", "", "");
 
                 WritePropertyGroupUserMacros(writer, "Debug", "ARM64", "", "");
                 WritePropertyGroupUserMacros(writer, "Release", "ARM64", "", "");
                 WritePropertyGroupUserMacros(writer, "Diagnostics", "ARM64", "", "");
-                WritePropertyGroupUserMacros(writer, "SimulationOnly", "ARM64", "", "");
+                WritePropertyGroupUserMacros(writer, "Simulation", "ARM64", "", "");
                 WritePropertyGroupUserMacros(writer, "TraceOnly", "ARM64", "", "");
                 WritePropertyGroupUserMacros(writer, "MetricsOnly", "ARM64", "", "");
 
@@ -465,14 +465,14 @@ namespace TallyUtil
                 WriteItemDefinitionGroup(writer, "Debug", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "Release", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "Diagnostics", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
-                WriteItemDefinitionGroup(writer, "SimulationOnly", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
+                WriteItemDefinitionGroup(writer, "Simulation", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "TraceOnly", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "MetricsOnly", "x64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
 
                 WriteItemDefinitionGroup(writer, "Debug", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "Release", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "Diagnostics", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
-                WriteItemDefinitionGroup(writer, "SimulationOnly", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
+                WriteItemDefinitionGroup(writer, "Simulation", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "TraceOnly", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
                 WriteItemDefinitionGroup(writer, "MetricsOnly", "ARM64", "/DTWMETRICS_ENABLE", "Console", "TWCoreLibWin.lib;TWServerLibWin.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;", "$(SolutionDir)build\\$(ProjectName)\\$(Platform)\\$(Configuration)\\$(MSBuildProjectName).log", "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\", true);
 
@@ -553,14 +553,14 @@ namespace TallyUtil
                 WriteProjectConfiguration(writer, "Debug", "x64");
                 WriteProjectConfiguration(writer, "Release", "x64");
                 WriteProjectConfiguration(writer, "Diagnostics", "x64");
-                WriteProjectConfiguration(writer, "SimulationOnly", "x64");
+                WriteProjectConfiguration(writer, "Simulation", "x64");
                 WriteProjectConfiguration(writer, "TraceOnly", "x64");
                 WriteProjectConfiguration(writer, "MetricsOnly", "x64");
 
                 WriteProjectConfiguration(writer, "Debug", "ARM64");
                 WriteProjectConfiguration(writer, "Release", "ARM64");
                 WriteProjectConfiguration(writer, "Diagnostics", "ARM64");
-                WriteProjectConfiguration(writer, "SimulationOnly", "ARM64");
+                WriteProjectConfiguration(writer, "Simulation", "ARM64");
                 WriteProjectConfiguration(writer, "TraceOnly", "ARM64");
                 WriteProjectConfiguration(writer, "MetricsOnly", "ARM64");
 
@@ -589,14 +589,14 @@ namespace TallyUtil
                 WritePropertyGroup(writer, "Debug", "x64", "Application", "Remote_GCC_1_0", "", "true");
                 WritePropertyGroup(writer, "Release", "x64", "Application", "Remote_GCC_1_0", "", "false");
                 WritePropertyGroup(writer, "Diagnostics", "x64", "Application", "Remote_GCC_1_0", "", "false");
-                WritePropertyGroup(writer, "SimulationOnly", "x64", "Application", "Remote_GCC_1_0", "", "false");
+                WritePropertyGroup(writer, "Simulation", "x64", "Application", "Remote_GCC_1_0", "", "false");
                 WritePropertyGroup(writer, "TraceOnly", "x64", "Application", "Remote_GCC_1_0", "", "false");
                 WritePropertyGroup(writer, "MetricsOnly", "x64", "Application", "Remote_GCC_1_0", "", "false");
 
                 WritePropertyGroup(writer, "Debug", "ARM64", "Application", "Remote_GCC_1_0", "", "true");
                 WritePropertyGroup(writer, "Release", "ARM64", "Application", "Remote_GCC_1_0", "", "false");
                 WritePropertyGroup(writer, "Diagnostics", "ARM64", "Application", "Remote_GCC_1_0", "", "false");
-                WritePropertyGroup(writer, "SimulationOnly", "ARM64", "Application", "Remote_GCC_1_0", "", "false");
+                WritePropertyGroup(writer, "Simulation", "ARM64", "Application", "Remote_GCC_1_0", "", "false");
                 WritePropertyGroup(writer, "TraceOnly", "ARM64", "Application", "Remote_GCC_1_0", "", "false");
                 WritePropertyGroup(writer, "MetricsOnly", "ARM64", "Application", "Remote_GCC_1_0", "", "false");
 
@@ -640,14 +640,14 @@ namespace TallyUtil
                 WriteImportGroup(writer, "Debug", "x64", output_property, "AdditionalIncludes.props", "LinDebug.props");
                 WriteImportGroup(writer, "Release", "x64", output_property, "AdditionalIncludes.props", "LinRelease.props");
                 WriteImportGroup(writer, "Diagnostics", "x64", output_property, "AdditionalIncludes.props", "LinRelease.props", "Diagnostics.props");
-                WriteImportGroup(writer, "SimulationOnly", "x64", output_property, "AdditionalIncludes.props", "LinRelease.props", "Simulation.props");
+                WriteImportGroup(writer, "Simulation", "x64", output_property, "AdditionalIncludes.props", "LinRelease.props", "Simulation.props");
                 WriteImportGroup(writer, "TraceOnly", "x64", output_property, "AdditionalIncludes.props", "LinRelease.props", "TraceOnly.props");
                 WriteImportGroup(writer, "MetricsOnly", "x64", output_property, "AdditionalIncludes.props", "LinRelease.props", "MetricsOnly.props");
 
                 WriteImportGroup(writer, "Debug", "ARM64", output_property, "AdditionalIncludes.props", "LinDebug.props");
                 WriteImportGroup(writer, "Release", "ARM64", output_property, "AdditionalIncludes.props", "LinRelease.props");
                 WriteImportGroup(writer, "Diagnostics", "ARM64", output_property, "AdditionalIncludes.props", "LinRelease.props", "Diagnostics.props");
-                WriteImportGroup(writer, "SimulationOnly", "ARM64", output_property, "AdditionalIncludes.props", "LinRelease.props", "Simulation.props");
+                WriteImportGroup(writer, "Simulation", "ARM64", output_property, "AdditionalIncludes.props", "LinRelease.props", "Simulation.props");
                 WriteImportGroup(writer, "TraceOnly", "ARM64", output_property, "AdditionalIncludes.props", "LinRelease.props", "TraceOnly.props");
                 WriteImportGroup(writer, "MetricsOnly", "ARM64", output_property, "AdditionalIncludes.props", "LinRelease.props", "MetricsOnly.props");
 
@@ -658,19 +658,19 @@ namespace TallyUtil
                 writer.WriteEndElement();
                 // }
                 // {
-                WritePropertyGroupUserMacros(writer, "Debug", "x64","$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Release", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Diagnostics", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "SimulationOnly", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "TraceOnly", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "MetricsOnly", "x64", "$(RemoteRootDir", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Debug", "x64","$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Release", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Diagnostics", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Simulation", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "TraceOnly", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "MetricsOnly", "x64", "$(RemoteRootDir)", "$(IncludePath)");
 
-                WritePropertyGroupUserMacros(writer, "Debug", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Release", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Diagnostics", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "SimulationOnly", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "TraceOnly", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "MetricsOnly", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Debug", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Release", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Diagnostics", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Simulation", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "TraceOnly", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "MetricsOnly", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
 
                 // }
                 // {
@@ -678,14 +678,14 @@ namespace TallyUtil
                 WriteItemDefinitionGroup(writer, "Debug", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "","",false);
                 WriteItemDefinitionGroup(writer, "Release", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "Diagnostics", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
-                WriteItemDefinitionGroup(writer, "SimulationOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "Simulation", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "TraceOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "MetricsOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
 
                 WriteItemDefinitionGroup(writer, "Debug", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "Release", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "Diagnostics", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
-                WriteItemDefinitionGroup(writer, "SimulationOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "Simulation", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "TraceOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "MetricsOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
 
@@ -726,14 +726,14 @@ namespace TallyUtil
                 WriteProjectConfiguration(writer, "Debug", "x64");
                 WriteProjectConfiguration(writer, "Release", "x64");
                 WriteProjectConfiguration(writer, "Diagnostics", "x64");
-                WriteProjectConfiguration(writer, "SimulationOnly", "x64");
+                WriteProjectConfiguration(writer, "Simulation", "x64");
                 WriteProjectConfiguration(writer, "TraceOnly", "x64");
                 WriteProjectConfiguration(writer, "MetricsOnly", "x64");
 
                 WriteProjectConfiguration(writer, "Debug", "ARM64");
                 WriteProjectConfiguration(writer, "Release", "ARM64");
                 WriteProjectConfiguration(writer, "Diagnostics", "ARM64");
-                WriteProjectConfiguration(writer, "SimulationOnly", "ARM64");
+                WriteProjectConfiguration(writer, "Simulation", "ARM64");
                 WriteProjectConfiguration(writer, "TraceOnly", "ARM64");
                 WriteProjectConfiguration(writer, "MetricsOnly", "ARM64");
 
@@ -762,14 +762,14 @@ namespace TallyUtil
                 WritePropertyGroup(writer, "Debug", "x64", "Application", "Remote_GCC_1_0", "", "true");
                 WritePropertyGroup(writer, "Release", "x64", "Application", "Remote_GCC_1_0", "", "false");
                 WritePropertyGroup(writer, "Diagnostics", "x64", "Application", "Remote_GCC_1_0", "", "false");
-                WritePropertyGroup(writer, "SimulationOnly", "x64", "Application", "Remote_GCC_1_0", "", "false");
+                WritePropertyGroup(writer, "Simulation", "x64", "Application", "Remote_GCC_1_0", "", "false");
                 WritePropertyGroup(writer, "TraceOnly", "x64", "Application", "Remote_GCC_1_0", "", "false");
                 WritePropertyGroup(writer, "MetricsOnly", "x64", "Application", "Remote_GCC_1_0", "", "false");
 
                 WritePropertyGroup(writer, "Debug", "ARM64", "Application", "Remote_GCC_1_0", "", "true");
                 WritePropertyGroup(writer, "Release", "ARM64", "Application", "Remote_GCC_1_0", "", "false");
                 WritePropertyGroup(writer, "Diagnostics", "ARM64", "Application", "Remote_GCC_1_0", "", "false");
-                WritePropertyGroup(writer, "SimulationOnly", "ARM64", "Application", "Remote_GCC_1_0", "", "false");
+                WritePropertyGroup(writer, "Simulation", "ARM64", "Application", "Remote_GCC_1_0", "", "false");
                 WritePropertyGroup(writer, "TraceOnly", "ARM64", "Application", "Remote_GCC_1_0", "", "false");
                 WritePropertyGroup(writer, "MetricsOnly", "ARM64", "Application", "Remote_GCC_1_0", "", "false");
 
@@ -813,14 +813,14 @@ namespace TallyUtil
                 WriteImportGroup(writer, "Debug", "x64", output_property, "AdditionalIncludes.props", "LinDebug.props");
                 WriteImportGroup(writer, "Release", "x64", output_property, "AdditionalIncludes.props", "LinRelease.props");
                 WriteImportGroup(writer, "Diagnostics", "x64", output_property, "AdditionalIncludes.props", "LinRelease.props", "Diagnostics.props");
-                WriteImportGroup(writer, "SimulationOnly", "x64", output_property, "AdditionalIncludes.props", "LinRelease.props", "Simulation.props");
+                WriteImportGroup(writer, "Simulation", "x64", output_property, "AdditionalIncludes.props", "LinRelease.props", "Simulation.props");
                 WriteImportGroup(writer, "TraceOnly", "x64", output_property, "AdditionalIncludes.props", "LinRelease.props", "TraceOnly.props");
                 WriteImportGroup(writer, "MetricsOnly", "x64", output_property, "AdditionalIncludes.props", "LinRelease.props", "MetricsOnly.props");
 
                 WriteImportGroup(writer, "Debug", "ARM64", output_property, "AdditionalIncludes.props", "LinDebug.props");
                 WriteImportGroup(writer, "Release", "ARM64", output_property, "AdditionalIncludes.props", "LinRelease.props");
                 WriteImportGroup(writer, "Diagnostics", "ARM64", output_property, "AdditionalIncludes.props", "LinRelease.props", "Diagnostics.props");
-                WriteImportGroup(writer, "SimulationOnly", "ARM64", output_property, "AdditionalIncludes.props", "LinRelease.props", "Simulation.props");
+                WriteImportGroup(writer, "Simulation", "ARM64", output_property, "AdditionalIncludes.props", "LinRelease.props", "Simulation.props");
                 WriteImportGroup(writer, "TraceOnly", "ARM64", output_property, "AdditionalIncludes.props", "LinRelease.props", "TraceOnly.props");
                 WriteImportGroup(writer, "MetricsOnly", "ARM64", output_property, "AdditionalIncludes.props", "LinRelease.props", "MetricsOnly.props");
 
@@ -831,19 +831,19 @@ namespace TallyUtil
                 writer.WriteEndElement();
                 // }
                 // {
-                WritePropertyGroupUserMacros(writer, "Debug", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Release", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Diagnostics", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "SimulationOnly", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "TraceOnly", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "MetricsOnly", "x64", "$(RemoteRootDir", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Debug", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Release", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Diagnostics", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Simulation", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "TraceOnly", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "MetricsOnly", "x64", "$(RemoteRootDir)", "$(IncludePath)");
 
-                WritePropertyGroupUserMacros(writer, "Debug", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Release", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Diagnostics", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "SimulationOnly", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "TraceOnly", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "MetricsOnly", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Debug", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Release", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Diagnostics", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Simulation", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "TraceOnly", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "MetricsOnly", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
 
                 // }
                 // {
@@ -851,14 +851,14 @@ namespace TallyUtil
                 WriteItemDefinitionGroup(writer, "Debug", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "Release", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "Diagnostics", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
-                WriteItemDefinitionGroup(writer, "SimulationOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "Simulation", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "TraceOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "MetricsOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
 
                 WriteItemDefinitionGroup(writer, "Debug", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "Release", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "Diagnostics", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
-                WriteItemDefinitionGroup(writer, "SimulationOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "Simulation", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "TraceOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "MetricsOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibLin.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibLin.a;", "", "", false);
 
@@ -899,14 +899,14 @@ namespace TallyUtil
                 WriteProjectConfiguration(writer, "Debug", "x64");
                 WriteProjectConfiguration(writer, "Release", "x64");
                 WriteProjectConfiguration(writer, "Diagnostics", "x64");
-                WriteProjectConfiguration(writer, "SimulationOnly", "x64");
+                WriteProjectConfiguration(writer, "Simulation", "x64");
                 WriteProjectConfiguration(writer, "TraceOnly", "x64");
                 WriteProjectConfiguration(writer, "MetricsOnly", "x64");
 
                 WriteProjectConfiguration(writer, "Debug", "ARM64");
                 WriteProjectConfiguration(writer, "Release", "ARM64");
                 WriteProjectConfiguration(writer, "Diagnostics", "ARM64");
-                WriteProjectConfiguration(writer, "SimulationOnly", "ARM64");
+                WriteProjectConfiguration(writer, "Simulation", "ARM64");
                 WriteProjectConfiguration(writer, "TraceOnly", "ARM64");
                 WriteProjectConfiguration(writer, "MetricsOnly", "ARM64");
 
@@ -935,14 +935,14 @@ namespace TallyUtil
                 WritePropertyGroup(writer, "Debug", "x64", "Application", "Remote_Clang_1_0", "", "true");
                 WritePropertyGroup(writer, "Release", "x64", "Application", "Remote_Clang_1_0", "", "false");
                 WritePropertyGroup(writer, "Diagnostics", "x64", "Application", "Remote_Clang_1_0", "", "false");
-                WritePropertyGroup(writer, "SimulationOnly", "x64", "Application", "Remote_Clang_1_0", "", "false");
+                WritePropertyGroup(writer, "Simulation", "x64", "Application", "Remote_Clang_1_0", "", "false");
                 WritePropertyGroup(writer, "TraceOnly", "x64", "Application", "Remote_Clang_1_0", "", "false");
                 WritePropertyGroup(writer, "MetricsOnly", "x64", "Application", "Remote_Clang_1_0", "", "false");
 
                 WritePropertyGroup(writer, "Debug", "ARM64", "Application", "Remote_Clang_1_0", "", "true");
                 WritePropertyGroup(writer, "Release", "ARM64", "Application", "Remote_Clang_1_0", "", "false");
                 WritePropertyGroup(writer, "Diagnostics", "ARM64", "Application", "Remote_Clang_1_0", "", "false");
-                WritePropertyGroup(writer, "SimulationOnly", "ARM64", "Application", "Remote_Clang_1_0", "", "false");
+                WritePropertyGroup(writer, "Simulation", "ARM64", "Application", "Remote_Clang_1_0", "", "false");
                 WritePropertyGroup(writer, "TraceOnly", "ARM64", "Application", "Remote_Clang_1_0", "", "false");
                 WritePropertyGroup(writer, "MetricsOnly", "ARM64", "Application", "Remote_Clang_1_0", "", "false");
 
@@ -986,14 +986,14 @@ namespace TallyUtil
                 WriteImportGroup(writer, "Debug", "x64", output_property, "AdditionalIncludes.props", "MacDebug.props");
                 WriteImportGroup(writer, "Release", "x64", output_property, "AdditionalIncludes.props", "MacRelease.props");
                 WriteImportGroup(writer, "Diagnostics", "x64", output_property, "AdditionalIncludes.props", "MacRelease.props", "Diagnostics.props");
-                WriteImportGroup(writer, "SimulationOnly", "x64", output_property, "AdditionalIncludes.props", "MacRelease.props", "Simulation.props");
+                WriteImportGroup(writer, "Simulation", "x64", output_property, "AdditionalIncludes.props", "MacRelease.props", "Simulation.props");
                 WriteImportGroup(writer, "TraceOnly", "x64", output_property, "AdditionalIncludes.props", "MacRelease.props", "TraceOnly.props");
                 WriteImportGroup(writer, "MetricsOnly", "x64", output_property, "AdditionalIncludes.props", "MacRelease.props", "MetricsOnly.props");
 
                 WriteImportGroup(writer, "Debug", "ARM64", output_property, "AdditionalIncludes.props", "MacDebug.props");
                 WriteImportGroup(writer, "Release", "ARM64", output_property, "AdditionalIncludes.props", "MacRelease.props");
                 WriteImportGroup(writer, "Diagnostics", "ARM64", output_property, "AdditionalIncludes.props", "MacRelease.props", "Diagnostics.props");
-                WriteImportGroup(writer, "SimulationOnly", "ARM64", output_property, "AdditionalIncludes.props", "MacRelease.props", "Simulation.props");
+                WriteImportGroup(writer, "Simulation", "ARM64", output_property, "AdditionalIncludes.props", "MacRelease.props", "Simulation.props");
                 WriteImportGroup(writer, "TraceOnly", "ARM64", output_property, "AdditionalIncludes.props", "MacRelease.props", "TraceOnly.props");
                 WriteImportGroup(writer, "MetricsOnly", "ARM64", output_property, "AdditionalIncludes.props", "MacRelease.props", "MetricsOnly.props");
 
@@ -1004,19 +1004,19 @@ namespace TallyUtil
                 writer.WriteEndElement();
                 // }
                 // {
-                WritePropertyGroupUserMacros(writer, "Debug", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Release", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Diagnostics", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "SimulationOnly", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "TraceOnly", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "MetricsOnly", "x64", "$(RemoteRootDir", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Debug", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Release", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Diagnostics", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Simulation", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "TraceOnly", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "MetricsOnly", "x64", "$(RemoteRootDir)", "$(IncludePath)");
 
-                WritePropertyGroupUserMacros(writer, "Debug", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Release", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Diagnostics", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "SimulationOnly", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "TraceOnly", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "MetricsOnly", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Debug", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Release", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Diagnostics", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Simulation", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "TraceOnly", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "MetricsOnly", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
 
                 // }
                 // {
@@ -1024,14 +1024,14 @@ namespace TallyUtil
                 WriteItemDefinitionGroup(writer, "Debug", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "Release", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "Diagnostics", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
-                WriteItemDefinitionGroup(writer, "SimulationOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "Simulation", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "TraceOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "MetricsOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
 
                 WriteItemDefinitionGroup(writer, "Debug", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "Release", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "Diagnostics", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
-                WriteItemDefinitionGroup(writer, "SimulationOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "Simulation", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "TraceOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
                 WriteItemDefinitionGroup(writer, "MetricsOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
 
@@ -1072,14 +1072,14 @@ namespace TallyUtil
                 WriteProjectConfiguration(writer, "Debug", "x64");
                 WriteProjectConfiguration(writer, "Release", "x64");
                 WriteProjectConfiguration(writer, "Diagnostics", "x64");
-                WriteProjectConfiguration(writer, "SimulationOnly", "x64");
+                WriteProjectConfiguration(writer, "Simulation", "x64");
                 WriteProjectConfiguration(writer, "TraceOnly", "x64");
                 WriteProjectConfiguration(writer, "MetricsOnly", "x64");
 
                 WriteProjectConfiguration(writer, "Debug", "ARM64");
                 WriteProjectConfiguration(writer, "Release", "ARM64");
                 WriteProjectConfiguration(writer, "Diagnostics", "ARM64");
-                WriteProjectConfiguration(writer, "SimulationOnly", "ARM64");
+                WriteProjectConfiguration(writer, "Simulation", "ARM64");
                 WriteProjectConfiguration(writer, "TraceOnly", "ARM64");
                 WriteProjectConfiguration(writer, "MetricsOnly", "ARM64");
 
@@ -1108,14 +1108,14 @@ namespace TallyUtil
                 WritePropertyGroup(writer, "Debug", "x64", "Application", "Remote_Clang_1_0", "", "true");
                 WritePropertyGroup(writer, "Release", "x64", "Application", "Remote_Clang_1_0", "", "false");
                 WritePropertyGroup(writer, "Diagnostics", "x64", "Application", "Remote_Clang_1_0", "", "false");
-                WritePropertyGroup(writer, "SimulationOnly", "x64", "Application", "Remote_Clang_1_0", "", "false");
+                WritePropertyGroup(writer, "Simulation", "x64", "Application", "Remote_Clang_1_0", "", "false");
                 WritePropertyGroup(writer, "TraceOnly", "x64", "Application", "Remote_Clang_1_0", "", "false");
                 WritePropertyGroup(writer, "MetricsOnly", "x64", "Application", "Remote_Clang_1_0", "", "false");
 
                 WritePropertyGroup(writer, "Debug", "ARM64", "Application", "Remote_Clang_1_0", "", "true");
                 WritePropertyGroup(writer, "Release", "ARM64", "Application", "Remote_Clang_1_0", "", "false");
                 WritePropertyGroup(writer, "Diagnostics", "ARM64", "Application", "Remote_Clang_1_0", "", "false");
-                WritePropertyGroup(writer, "SimulationOnly", "ARM64", "Application", "Remote_Clang_1_0", "", "false");
+                WritePropertyGroup(writer, "Simulation", "ARM64", "Application", "Remote_Clang_1_0", "", "false");
                 WritePropertyGroup(writer, "TraceOnly", "ARM64", "Application", "Remote_Clang_1_0", "", "false");
                 WritePropertyGroup(writer, "MetricsOnly", "ARM64", "Application", "Remote_Clang_1_0", "", "false");
 
@@ -1159,14 +1159,14 @@ namespace TallyUtil
                 WriteImportGroup(writer, "Debug", "x64", output_property, "AdditionalIncludes.props", "MacDebug.props");
                 WriteImportGroup(writer, "Release", "x64", output_property, "AdditionalIncludes.props", "MacRelease.props");
                 WriteImportGroup(writer, "Diagnostics", "x64", output_property, "AdditionalIncludes.props", "MacRelease.props", "Diagnostics.props");
-                WriteImportGroup(writer, "SimulationOnly", "x64", output_property, "AdditionalIncludes.props", "MacRelease.props", "Simulation.props");
+                WriteImportGroup(writer, "Simulation", "x64", output_property, "AdditionalIncludes.props", "MacRelease.props", "Simulation.props");
                 WriteImportGroup(writer, "TraceOnly", "x64", output_property, "AdditionalIncludes.props", "MacRelease.props", "TraceOnly.props");
                 WriteImportGroup(writer, "MetricsOnly", "x64", output_property, "AdditionalIncludes.props", "MacRelease.props", "MetricsOnly.props");
 
                 WriteImportGroup(writer, "Debug", "ARM64", output_property, "AdditionalIncludes.props", "MacDebug.props");
                 WriteImportGroup(writer, "Release", "ARM64", output_property, "AdditionalIncludes.props", "MacRelease.props");
                 WriteImportGroup(writer, "Diagnostics", "ARM64", output_property, "AdditionalIncludes.props", "MacRelease.props", "Diagnostics.props");
-                WriteImportGroup(writer, "SimulationOnly", "ARM64", output_property, "AdditionalIncludes.props", "MacRelease.props", "Simulation.props");
+                WriteImportGroup(writer, "Simulation", "ARM64", output_property, "AdditionalIncludes.props", "MacRelease.props", "Simulation.props");
                 WriteImportGroup(writer, "TraceOnly", "ARM64", output_property, "AdditionalIncludes.props", "MacRelease.props", "TraceOnly.props");
                 WriteImportGroup(writer, "MetricsOnly", "ARM64", output_property, "AdditionalIncludes.props", "MacRelease.props", "MetricsOnly.props");
 
@@ -1177,36 +1177,36 @@ namespace TallyUtil
                 writer.WriteEndElement();
                 // }
                 // {
-                WritePropertyGroupUserMacros(writer, "Debug", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Release", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Diagnostics", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "SimulationOnly", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "TraceOnly", "x64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "MetricsOnly", "x64", "$(RemoteRootDir", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Debug", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Release", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Diagnostics", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Simulation", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "TraceOnly", "x64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "MetricsOnly", "x64", "$(RemoteRootDir)", "$(IncludePath)");
 
-                WritePropertyGroupUserMacros(writer, "Debug", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Release", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "Diagnostics", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "SimulationOnly", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "TraceOnly", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
-                WritePropertyGroupUserMacros(writer, "MetricsOnly", "ARM64", "$(RemoteRootDir", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Debug", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Release", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Diagnostics", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "Simulation", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "TraceOnly", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
+                WritePropertyGroupUserMacros(writer, "MetricsOnly", "ARM64", "$(RemoteRootDir)", "$(IncludePath)");
 
                 // }
                 // {
 
-                WriteItemDefinitionGroup(writer, "Debug", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a", "", "", false);
-                WriteItemDefinitionGroup(writer, "Release", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a", "", "", false);
-                WriteItemDefinitionGroup(writer, "Diagnostics", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a", "", "", false);
-                WriteItemDefinitionGroup(writer, "SimulationOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a", "", "", false);
-                WriteItemDefinitionGroup(writer, "TraceOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a", "", "", false);
-                WriteItemDefinitionGroup(writer, "MetricsOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a", "", "", false);
+                WriteItemDefinitionGroup(writer, "Debug", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "Release", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "Diagnostics", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "Simulation", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "TraceOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "MetricsOnly", "x64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
 
-                WriteItemDefinitionGroup(writer, "Debug", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a", "", "", false);
-                WriteItemDefinitionGroup(writer, "Release", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a", "", "", false);
-                WriteItemDefinitionGroup(writer, "Diagnostics", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a", "", "", false);
-                WriteItemDefinitionGroup(writer, "SimulationOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a", "", "", false);
-                WriteItemDefinitionGroup(writer, "TraceOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a", "", "", false);
-                WriteItemDefinitionGroup(writer, "MetricsOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a", "", "", false);
+                WriteItemDefinitionGroup(writer, "Debug", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "Release", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "Diagnostics", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "Simulation", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "TraceOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
+                WriteItemDefinitionGroup(writer, "MetricsOnly", "ARM64", "/DTWMETRICS_ENABLE", "", "$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWServerLibMac.a;$(RemoteRootDir)/$(SolutionName)/lib/$(Platform)/$(Configuration)/libTWCoreLibMac.a;", "", "", false);
 
                 // }
                 // {
@@ -1308,7 +1308,7 @@ namespace TallyUtil
             if(sub_system.Length != 0)
                 writer.WriteElementString("SubSystem", sub_system);
 
-            writer.WriteElementString("AdditionalDependencies", libs + "% (AdditionalDependencies)");
+            writer.WriteElementString("AdditionalDependencies", libs + "%(AdditionalDependencies)");
             
             writer.WriteElementString("AdditionalLibraryDirectories", addlibdir); // "$(SolutionDir)lib\\$(Platform)\\$(Configuration)\\"
             writer.WriteEndElement();
