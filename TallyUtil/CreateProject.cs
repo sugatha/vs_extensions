@@ -1258,21 +1258,21 @@ namespace TallyUtil
             writer.WriteEndElement();
 
             writer.WriteStartElement("Import");
-            writer.WriteAttributeString("Project", prop_1);
+            writer.WriteAttributeString("Project", "..\\..\\TallyWorldProperties\\" + prop_1);
             writer.WriteEndElement();
 
             writer.WriteStartElement("Import");
-            writer.WriteAttributeString("Project", prop_2);
+            writer.WriteAttributeString("Project", "..\\..\\TallyWorldProperties\\" + prop_2);
             writer.WriteEndElement();
 
             writer.WriteStartElement("Import");
-            writer.WriteAttributeString("Project", prop_3);
+            writer.WriteAttributeString("Project", "..\\..\\TallyWorldProperties\\" + prop_3);
             writer.WriteEndElement();
 
             if (prop_4.Length != 0)
             {
                 writer.WriteStartElement("Import");
-                writer.WriteAttributeString("Project", prop_4);
+                writer.WriteAttributeString("Project", "..\\..\\TallyWorldProperties\\" + prop_4);
                 writer.WriteEndElement();
             }
 
